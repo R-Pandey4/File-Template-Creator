@@ -8,10 +8,11 @@ num_prac= int(input("\n\nEnter the number of experiments: "))
 document = Document() 
 
 #Index table
-table = document.add_table(rows=num_prac+1, cols=3)
+table = document.add_table(rows=num_prac+1, cols=4)
 table.cell(0,0).text="S.No"
 table.cell(0,1).text="Program"
 table.cell(0,2).text="Date"
+table.cell(0,3).text="Sign"
 
 for i in range(1,num_prac+1):
     table.cell(i,0).text=f"{i}"
@@ -32,7 +33,7 @@ for i in range(1,num_prac+1):
 
     para2 = document.add_paragraph()
 
-    para2.alignment= WD_ALIGN_PARAGRAPH.CENTER #The Word "Code"
+    para2.alignment= WD_ALIGN_PARAGRAPH.CENTER #The Word "CODE"
     run2 = para2.add_run("CODE\n\n")
     font2 = run2.font
     font2.name = "TimesNewRoman"
